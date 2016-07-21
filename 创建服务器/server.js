@@ -1,5 +1,5 @@
 var http1 = require('http');
-// 创建多个http也只是对应不急一个ip地址，要想设定多个访问进程，要设定不同端口
+// 创建多个http也只是对应一个ip地址，要想设定多个访问进程，要设定不同端口
 // 生成一个http对象，来执行他的方法
 
 http1.createServer(function(request, response) {
