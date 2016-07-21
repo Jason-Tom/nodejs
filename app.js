@@ -7,8 +7,9 @@ var conn = mysql.createConnection({
     port: 3306
 });
 conn.connect();
-conn.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+conn.query('select `name` FROM t_user', function(err, rows, fields) {
+  // query前面是查询语句，后面是封装的方法，第一个是异常检测，第二个是结果集
     if (err) throw err;
-    console.log('The solution is: ', rows[0].solution);
+    console.log('The name is: ', rows[1].name);
 });
 conn.end();
