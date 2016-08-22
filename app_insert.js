@@ -7,7 +7,7 @@ var conn = mysql.createConnection({
     port: 3306
 });
 conn.connect();
-conn.query('INSERT INTO t_user (name,lalala) VALUES (22,22)', function (err0, res0) {
+conn.query('INSERT INTO t_user (name,lalala) VALUES (23,23)', function (err0, res0) {
     if (err0) console.log(err0);
     console.log("DELETE Return ==> ");
     console.log(res0);
