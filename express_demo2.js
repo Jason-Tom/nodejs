@@ -1,18 +1,20 @@
 var express = require('express');
 var app = express();
 
+
+//  POST 请求
+app.post('/', function (req, res) {
+  // 根据不同的url给请求分配不同的处理脚本
+   console.log("主页 POST 请求");
+   res.send('Hello POST');
+})
+
 //  主页输出 "Hello World"
 app.get('/', function (req, res) {
    console.log("主页 GET 请求");
    res.send('Hello GET');
 })
-
-
-//  POST 请求
-app.post('/', function (req, res) {
-   console.log("主页 POST 请求");
-   res.send('Hello POST');
-})
+// 默认输出的就是跟路径的get请求
 
 //  /del_user 页面响应
 app.delete('/del_user', function (req, res) {
@@ -28,12 +30,13 @@ app.get('/list_user', function (req, res) {
 
 // 对页面 abcd, abxcd, ab123cd, 等响应 GET 请求
 app.get('/ab*cd', function(req, res) {   
+  // 是同·使用通配符选定路径
    console.log("/ab*cd GET 请求");
    res.send('正则匹配');
 })
 
 
-var server = app.listen(8084, function () {
+var server = app.listen(8081, function () {
 
   var host = server.address().address
   var port = server.address().port

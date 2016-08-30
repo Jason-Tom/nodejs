@@ -9,8 +9,12 @@
 // 
 // var hello = require('./hello');
 // hello.world();
-var world = require('./hello1');
-world = new world();
-world.setName('BYVoid');
-world.sayHello();
+var world = require('./hello是1');
+// 自己写的模块引入不要去掉根路径
+// 模块引入文件能包含中文名，但是最好不要有中文
+// world = new world();
+// world.setName('BYVoid');
+// world.sayHello();
 // 间接创建一个同样的新对象来执行
+var lalala = new a;
+lalala();
