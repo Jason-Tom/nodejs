@@ -9,7 +9,8 @@ var request = require('superagent');
 
 request
 // .post('/api/pet')
-    .get('http://127.0.0.1:8081/process_get')
+    // .get('http://127.0.0.1:8081/process_get')
+    .get('http://www.w3school.com.cn/jquery/test1.txt')
     // 使用绝对路径
     // .get('/process_get')
     // 相对路径？
@@ -35,7 +36,7 @@ request
         } else {
             console.error('success');
             
-            // console.log(res);
+            console.log(res);
             // console.log(res.text);
             // 一般的文本和json（主要）
             // console.log(res.body);
@@ -43,7 +44,7 @@ request
             // console.log(res.header);
             // console.log(res.type);
             // console.log(res.charst);
-            console.log(res.status);
+            // console.log(res.status);
         }
     });
 

@@ -8,7 +8,8 @@ app.get('/index.htm', function(req, res) {
 })
 
 app.get('/process_get', function(req, res) {
-
+    response.setHeader("Access-Control-Allow-Origin:*");
+    response.setHeader("Access-Control-Allow-Methods:POST,GET");
     // 输出 JSON 格式
     response = {
         first_name: req.query.first_name,
@@ -25,10 +26,13 @@ app.get('/process_get', function(req, res) {
 })
 
 app.post('/process_post', function(req, res) {
-
+    response.setHeader("Access-Control-Allow-Origin:*");
+    response.setHeader("Access-Control-Allow-Methods:POST,GET");
     response = {
-        first_name: req.query.first_name,
-        last_name: req.query.last_name1
+        // first_name: req.query.first_name,
+        // last_name: req.query.last_name1
+        first_name: req.query.name,
+        last_name: req.query.city
     };
     console.log(response);
     res.end(JSON.stringify(response));
