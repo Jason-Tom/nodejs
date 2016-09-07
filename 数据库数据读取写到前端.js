@@ -16,5 +16,5 @@ conn.query('select `name` FROM t_user', function(err, rows, fields) {
     console.log('The test is: ', test);
 
 });
-conn.end();
 console.log('The test is: ', test);
+conn.end();
