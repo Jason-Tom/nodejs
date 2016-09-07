@@ -8,8 +8,10 @@ var pool = mysql.createPool({
 });
 
 var selectSQL = 'select * from t_user limit 10';
+// 变量形式输入
 
 pool.getConnection(function (err, conn) {
+    // 连接已经直接创建好了，直接调用就行
     if (err) console.log("POOL ==> " + err);
 
     conn.query(selectSQL,function(err,rows){
@@ -19,5 +21,7 @@ pool.getConnection(function (err, conn) {
             console.log(rows[i]);
         }
         conn.release();
+        // 用完要释放
     });
 });
+// 什么用？
