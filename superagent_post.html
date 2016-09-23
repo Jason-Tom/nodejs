@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content"></div>
+    <button onclick="lalala()">确定</button>
+    <!-- <script src="bundle_superagent.js"></script> -->
+    <!-- <script src="bundle.js"></script> -->
+    <script src="superagent_for_browser.js"></script>
+    <script type="text/javascript">
+
+    var request = require('superagent');
+
+    function lalala() {
+        alert("gagaga");
+
+        request
+            .post('http://127.0.0.1:8081/')
+            .set({
+                'API-Key': 'foobar',
+                Accept: 'application/json'
+            })
+            .query({
+                first_name: 'lalala',
+                last_name: 'gaga'
+            })
+            .end(function(err, res) {
+                if (err) {
+                    // console.error(err);
+                    console.error("发生错误");
+                } else {
+                    console.error('success');
+                    console.log(res.text);
+                    // console.log(res);
+                }
+            });
+
+    }
+    </script>
+</body>
+
+</html>
